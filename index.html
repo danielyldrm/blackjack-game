@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blackjack Oyunu</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top-bar">
+      <h1>Blackjack</h1>
+      <div class="stats">
+        <div>Oynanan: <span id="gamesPlayed">0</span></div>
+        <div>Kazanılan: <span id="wins">0</span></div>
+        <div>Berabere: <span id="pushes">0</span></div>
+        <div>Kaybedilen: <span id="losses">0</span></div>
+        <div>Win Rate: <span id="winRate">0%</span></div>
+      </div>
+      <div class="sound-toggle">
+        <label>
+          <input type="checkbox" id="soundToggle" checked />
+          Ses Açık
+        </label>
+      </div>
+    </header>
+
+    <main class="table">
+      <div class="dealer-area participant">
+        <h2>Kasa <span class="hand-value" id="dealerValue"></span></h2>
+        <div class="cards" id="dealerCards"></div>
+      </div>
+
+      <div class="status-panel">
+        <div id="message" class="message">Bahis gir ve Dağıt'a bas.</div>
+      </div>
+
+      <div class="player-area participant">
+        <h2>Oyuncu <span class="hand-value" id="playerValue"></span></h2>
+        <div class="cards" id="playerCards"></div>
+      </div>
+    </main>
+
+    <section class="controls">
+      <div class="bank">
+        Bakiye: <span id="balance">1000</span> $
+      </div>
+      <div class="bet-box">
+        <label>Bahis:
+          <input type="number" id="betInput" value="50" min="10" step="10" />
+        </label>
+        <div class="bet-buttons">
+          <button data-bet="25">+25</button>
+            <button data-bet="50">+50</button>
+            <button data-bet="100">+100</button>
+            <button id="clearBet">Sıfırla</button>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button id="dealBtn" class="primary">Dağıt</button>
+        <button id="hitBtn" disabled>Kart Çek</button>
+        <button id="standBtn" disabled>Kal</button>
+        <button id="doubleBtn" disabled>Çiftle</button>
+        <button id="newRoundBtn" disabled>Yeni Tur</button>
+        <button id="newGameBtn">Yeni Oyun</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Demo Blackjack | Eğlence amaçlı.</p>
+      <p class="small">
+        Yeni Tur: El devam ederken tıklarsan Teslim olmayı (Surrender) onaylaman istenir, bahsin yarısı iade olur ve elde yenilgi sayılır.<br />
+        Yeni Oyun: Tüm istatistikler ve bakiye tamamen sıfırlanır.
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
